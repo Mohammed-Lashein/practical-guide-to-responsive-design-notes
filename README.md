@@ -1,0 +1,1 @@
+Here I write my notes on following along with [practical guide to responsive design by kevin powell](https://youtu.be/x4u1yp3Msao).
