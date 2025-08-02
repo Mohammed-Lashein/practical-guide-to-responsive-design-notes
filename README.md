@@ -12,3 +12,8 @@ img {
 The above line of code makes the image adapt to the screen instead of overflowing the screen (and thus showing unnecessary horizontal scrollbar).
 
 I have made a small recording to visualize the effect of the above css declaration (Note: that in the video, I just used `max-width: 100%;` because it just worked)
+____
+### `width: 100%` vs `width: auto`
+[This video explains it visually in a good way](https://youtu.be/-st14lUQD3U), but in a nutshell:
+- `width: 100%`: will result in a body overflow if the element had a `margin`, because `100%` means "get all of the space of the container" whose value will be added to the margin.
+- `width: auto`: won't cause any overflow. our element adapts to the space available within the viewport without overflowing. 
