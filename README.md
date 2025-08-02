@@ -19,3 +19,21 @@ ____
 [This video explains it visually in a good way](https://youtu.be/-st14lUQD3U), but in a nutshell:
 - `width: 100%`: will result in a body overflow if the element had a `margin`, because `100%` means "get all of the space of the container" whose value will be added to the margin.
 - `width: auto`: won't cause any overflow. our element adapts to the space available within the viewport without overflowing. 
+___
+### CSS viewport insights 
+Notes are taken from [this mdn article](https://developer.mozilla.org/en-US/docs/Web/CSS/CSSOM_view/Viewport_concepts) 
+- Visual viewport: the part of the webpage that is currently visible in the browser
+- Layout viewport: the part into which the browser draws a web page
+
+When a user zooms in, the layout viewport **doesn't change** whereas the visual viewport is zoomed in.
+___
+### Make a responsive grid with no media queries
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(autofit, minmax(250px, 1fr))
+}
+```
+That last line needs some explanation
+- Normally, `repeat` function gets the 1st arg as a number, but there is a special case where it can get special keywords, like `autofit`.
+In this case, the grid will try to make its children **fit** (pun intended) the grid and any empty grid cell its space will be distributed among other non-empty grid cells.
